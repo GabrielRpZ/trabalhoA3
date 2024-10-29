@@ -2,44 +2,47 @@ import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        boolean continuar = true;
+        Scanner input = new Scanner(System.in);
+        Livro livro = new Livro();
 
-        while (continuar) {
-            System.out.println("Escolha uma opção:");
+        int opcao;
+
+        do {
+            System.out.println("\nEscolha uma opção:");
             System.out.println("1. Fazer cadastro");
-            System.out.println("2. Alugar livro");
+            System.out.println("2. Consultar livros");
             System.out.println("3. Ver livros disponíveis");
             System.out.println("4. Previsão de entrega dos livros");
             System.out.println("5. Sair");
 
-            int opcao = scanner.nextInt();
-            scanner.nextLine(); // Consumir a nova linha
+            opcao = input.nextInt();
+            input.nextLine(); // Consumir a nova linha
 
             switch (opcao) {
                 case 1:
-                    fazerCadastro(scanner);
+                    System.out.println();
                     break;
                 case 2:
-                    alugarLivro(scanner);
+                    livro.menuLivro();
                     break;
                 case 3:
-                    verLivrosDisponiveis();
+                System.out.println();
                     break;
                 case 4:
-                    previsaoEntrega();
+                System.out.println();
                     break;
                 case 5:
-                    continuar = false;
                     System.out.println("Saindo...");
                     break;
                 default:
                     System.out.println("Opção inválida. Tente novamente.");
             }
-        }
+        }while (opcao != 5);
+
+         
     }
 
-    public static void fazerCadastro(Scanner scanner) {
+    /*public static void fazerCadastro(Scanner scanner) {
         System.out.println("Digite seu nome:");
         String nome = scanner.nextLine();
         System.out.println("Digite seu email:");
@@ -69,6 +72,6 @@ public class Principal {
         System.out.println("Livro A: 5 dias");
         System.out.println("Livro B: 3 dias");
         System.out.println("Livro C: 7 dias");
-    }
+    }*/
 
 }
