@@ -12,4 +12,8 @@ public class Livro {
         this.preco = preco;
         this.quantidadeEstoque = quantidadeEstoque;
     }
+
+    public void setQuantidadeEstoque(int quantidade){
+        this.quantidadeEstoque = quantidade;
+    }
 }
